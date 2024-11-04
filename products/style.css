@@ -1,0 +1,70 @@
+.products_page_h {
+  font-weight: 400;
+  margin: 1rem 1rem 0rem;
+}
+
+.products_page_p {
+  margin: 0.5rem 1rem;
+  color: #445262;
+}
+.product_div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 1rem 2rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productItems {
+  width: 17%;
+}
+
+/* Container to position the dropdown */
+.dropdown-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Aligns the dropdown to the right */
+  position: relative;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropbtn {
+  background-color: #445262;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 2rem;
+  width: 7rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem; /* Ensures dropdown content aligns with the button */
+}
+
+.dropdown-content a {
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.5);
+  color: #445262;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  opacity: 0.7;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
