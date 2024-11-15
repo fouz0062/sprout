@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -113,3 +114,120 @@
     <script src="script.js"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprouts Products</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div>
+        <a href="../index.html"
+          ><img src="../images/logo.svg" class="logo" alt="logo"
+        /></a>
+      </div>
+      <div class="menu">
+        <div><a href="#product">Shop</a></div>
+        <div><a href="#">About</a></div>
+        <div><a href="#">Journal</a></div>
+        <!-- <div><a href="#">FAQ</a></div> -->
+        <div>
+          <a href="#"><i class="fa-regular fa-user"></i></a>
+        </div>
+        <div class="cart">
+          <a href="#" id="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+          <div id="cartlist">
+            <div class="close"><a href="#" id="close">close</a></div>
+            <div class="cartListItems"></div>
+            <div class="total">
+              <div>Total : <span id="totalAmount"></span></div>
+              <button>Proceed To Pay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main -->
+    <h1 class="products_page_h">Shop New Products</h1>
+    <p class="products_page_p">
+      Browse our collection of new and recently added products.
+    </p>
+    <!-- produts -->
+    <div class="dropdown-container">
+      <div class="dropdown">
+        <button class="dropbtn" id="drpbtn">
+          Sort
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#" id="low">lowest price</a>
+          <a href="#" id="high">highest price</a>
+          <a href="#" id="name">Name</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <select name="dropDown" id="dropDown">
+      <option value="low">lowest price</option>
+      <option value="high">highest price</option>
+      <option value="name">Name</option>
+    </select> -->
+    <div id="product" class="product_div"></div>
+    <!-- footer -->
+    <footer>
+      <div>
+        <div class="footer-left">
+          <div>
+            <h4>Company</h4>
+            <p>Home</p>
+            <p>Shop</p>
+            <p>Journal</p>
+            <p>About SPROUT</p>
+            <p>Contact</p>
+            <p>Help</p>
+          </div>
+          <div>
+            <h4>Cart</h4>
+            <p>Account</p>
+          </div>
+          <div>
+            <h4>Leagal</h4>
+            <p>Terms of use</p>
+            <p>Privacy</p>
+            <p>Return policy</p>
+          </div>
+          <div>
+            <h4>Follow US</h4>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">Facebook</a></p>
+          </div>
+          <div>
+            <h4>Contact US</h4>
+            <p><a href="#">Get in touch</a></p>
+          </div>
+        </div>
+        <div class="footer-right">
+          <h4>Sign up to our newsletter</h4>
+          <input type="email" name="" id="" required />
+          <button><i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+      </div>
+      <div class="copyrights">©2024 sprout-store.com All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+>>>>>>> 1b8f82520a2a31b7648222f7524237bb77a271fe
