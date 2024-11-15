@@ -23,7 +23,8 @@
 .dropdown-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* Aligns the dropdown to the right */
+  justify-content: flex-start; /* Aligns the dropdown to the right */
+  margin: 1rem 1rem 0 1rem;
   position: relative;
 }
 
@@ -50,7 +51,7 @@
   display: none;
   position: absolute;
   top: 2rem;
-  right: 2rem; /* Ensures dropdown content aligns with the button */
+  left: 0rem; /* Ensures dropdown content aligns with the button */
 }
 
 .dropdown-content a {

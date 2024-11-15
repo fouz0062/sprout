@@ -30,8 +30,16 @@
         <div>
           <a href="#"><i class="fa-regular fa-user"></i></a>
         </div>
-        <div>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        <div class="cart">
+          <a href="#" id="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+          <div id="cartlist">
+            <div class="close"><a href="#" id="close">close</a></div>
+            <div class="cartListItems"></div>
+            <div class="total">
+              <div>Total : <span id="totalAmount"></span></div>
+              <button>Proceed To Pay</button>
+            </div>
+          </div>
         </div>
       </div>
     </header>

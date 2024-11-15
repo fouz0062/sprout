@@ -88,13 +88,14 @@ let productDiv = document.getElementById("product");
 function generateProducts() {
   products.map((product) => {
     const itemElement = document.createElement("div");
+    itemElement.setAttribute("id", product.id);
     itemElement.classList.add("productItems");
     itemElement.innerHTML = `
     <img src="${product.img}" alt="${product.name}" />
     <h1>${product.item}</h1>
     <p>${product.name}</p>
       <p class="price">${product.price}</p>
-      <button>Add to Cart</button>
+      <button class="addToCart">Add to Cart</button>
     `;
     productDiv.appendChild(itemElement);
   });
@@ -134,3 +135,72 @@ name.addEventListener("click", () => {
   productDiv.innerHTML = "";
   return generateProducts();
 });
+
+//cart
+const cart = document.getElementById("cart");
+const cartList = document.getElementById("cartlist");
+const closeCart = document.getElementById("close");
+const addToCart = document.getElementsByClassName("addToCart");
+const cartListItems = document.querySelector(".cartListItems");
+let totalAmount = document.getElementById("totalAmount");
+let cartItems = [];
+
+function pushCartItems() {
+  cartListItems.innerHTML = "";
+  totalAmount.innerText = "";
+  let currentTotal = totalAmount.innerText
+    ? parseInt(totalAmount.innerText)
+    : (totalAmount.innerText = +0);
+  if (cartItems) {
+    cartItems.forEach((item, index) => {
+      const cartListItem = document.createElement("div");
+      cartListItem.innerHTML = `
+      <div>
+    <img src="${item.img}" alt="${item.name}" />
+    </div>
+    <div>
+    <h1>${item.item}</h1>
+    <p>${item.name}</p>
+    <p class="price">${item.price}</p>
+    </div>
+    <div class="removeProduct" onclick=removeFunc(${index})>
+    remove
+    </div>
+    `;
+      cartListItems.appendChild(cartListItem);
+
+      // update Total
+      currentTotal += parseInt(item.price.slice(-3));
+      // console.log(currentTotal);
+      totalAmount.innerText = currentTotal;
+    });
+  }
+}
+
+cart.addEventListener("click", () => {
+  cartList.style.display = "block";
+  pushCartItems();
+});
+
+closeCart.addEventListener("click", () => {
+  cartList.style.display = "none";
+});
+
+document.getElementById("product").addEventListener("click", (event) => {
+  if (event.target && event.target.classList.contains("addToCart")) {
+    const itemId = event.target.parentNode.getAttribute("id");
+
+    products.find((val) => {
+      if (val.id == itemId) {
+        cartItems.push(val);
+        alert(val.name + " has been added to cart");
+        pushCartItems();
+      }
+    });
+  }
+});
+
+function removeFunc(index) {
+  cartItems.splice(index, 1);
+  return pushCartItems();
+}

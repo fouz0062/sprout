@@ -12,6 +12,10 @@ img {
   max-width: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* header */
 
 header {
@@ -20,6 +24,8 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   background-color: #f7f7f8;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
@@ -262,4 +268,110 @@ footer > div {
 
 .product_page a {
   color: #f7f7f8;
+}
+
+/* cart */
+.cart {
+  position: relative;
+}
+#cartlist {
+  position: absolute;
+  background-color: #f7f7f8;
+  border: 1px solid black;
+  width: 40vw;
+  height: 100vh;
+  top: 0rem;
+  right: -2rem;
+  display: none;
+}
+.close {
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
+}
+
+.close a {
+  color: #445262;
+}
+
+/* cart products */
+
+.cartListItems {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  max-height: 80vh; /* Set a fixed height or max-height */
+  overflow-y: auto; /* Enables vertical scrolling if content exceeds height */
+}
+
+.cartListItems > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(68, 82, 98, 0.2);
+}
+.cartListItems > div > div:first-child {
+  width: 30%;
+}
+.cartListItems > div > div:nth-child(2) {
+  width: 50%;
+}
+.cartListItems > div > div:nth-child(2) h1,
+.cartListItems > div > div:nth-child(2) p {
+  font-size: 1rem;
+}
+
+.cartListItems > div > div:last-child {
+  width: 10%;
+}
+
+/* pay */
+
+.total {
+  position: absolute;
+  bottom: 1rem;
+  left: 0rem;
+  box-shadow: 2px 2px 8px rgba(68, 82, 98, 0.5);
+  width: 100%;
+  padding: 2rem 0;
+  background-color: #f7f7f8;
+}
+
+.total > div {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+.total > div > span {
+  font-size: 1.5rem;
+}
+.total button {
+  background-color: #14a34a;
+  color: #f7f7f8;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.total button:hover {
+  color: #14a34a;
+  background-color: #f7f7f8;
+  border: 1px solid #14a34a;
+  transition: 0.5s ease-in;
+}
+
+.dkk {
+  font-size: 1rem !important;
+  padding-right: 0.5rem;
 }
