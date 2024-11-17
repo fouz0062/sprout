@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", generateProducts);
 // sort
 const low = document.getElementById("low");
 const high = document.getElementById("high");
-const name = document.getElementById("name");
+const namePrd = document.getElementById("name");
 const drpbtn = document.getElementById("drpbtn");
 
 low.addEventListener("click", () => {
@@ -127,7 +127,7 @@ high.addEventListener("click", () => {
   return generateProducts();
 });
 
-name.addEventListener("click", () => {
+namePrd.addEventListener("click", () => {
   products.sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
@@ -204,3 +204,42 @@ function removeFunc(index) {
   cartItems.splice(index, 1);
   return pushCartItems();
 }
+
+// searchbar
+const inpt = document.getElementById("input");
+const submit = document.getElementById("submit");
+
+submit.addEventListener("click", () => {
+  const query = inpt.value.toLowerCase().trim();
+
+  productDiv.innerHTML = "";
+  inpt.value = "";
+
+  if (query !== "") {
+    const filteredProducts = products.filter(
+      (item) =>
+        item.name.toLowerCase().includes(query) ||
+        item.item.toLowerCase().includes(query)
+    );
+
+    if (filteredProducts.length > 0) {
+      filteredProducts.forEach((product) => {
+        const itemElement = document.createElement("div");
+        itemElement.setAttribute("id", product.id);
+        itemElement.classList.add("productItems");
+        itemElement.innerHTML = `
+          <img src="${product.img}" alt="${product.name}" />
+          <h1>${product.item}</h1>
+          <p>${product.name}</p>
+          <p class="price">${product.price}</p>
+          <button class="addToCart">Add to Cart</button>
+        `;
+        productDiv.appendChild(itemElement);
+      });
+    } else {
+      productDiv.innerHTML = `<p class="error">No products found for "${query}"</p>`;
+    }
+  } else {
+    generateProducts();
+  }
+});

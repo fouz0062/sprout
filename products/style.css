@@ -69,3 +69,20 @@
   display: flex;
   flex-direction: column;
 }
+
+.menu input {
+  border: none;
+  border-bottom: 1px solid #445262;
+  background-color: transparent;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.menu input::placeholder {
+  color: #445262;
+}
+
+.error {
+  font-size: 2rem;
+  margin: 1rem auto;
+}
