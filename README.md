@@ -13,7 +13,7 @@ Sprouts Products is a e-commerce web application designed for a seamless shoppin
   - Add items to the cart.
   - Remove items from the cart.
   - View the total amount in the cart.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop screens.
+- **Responsive Design**: Fully optimized tablet, and desktop screens.
 
 ## Technology Stack
 
