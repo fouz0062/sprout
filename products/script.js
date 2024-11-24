@@ -237,7 +237,9 @@ submit.addEventListener("click", () => {
         productDiv.appendChild(itemElement);
       });
     } else {
-      productDiv.innerHTML = `<p class="error">No products found for "${query}"</p>`;
+      productDiv.innerHTML = `<p class="error">No products found for "${query}"</p>
+      <button  class="redirectbtn"><a href="products.html">Go back to products page</a></button>
+      `;
     }
   } else {
     generateProducts();
